@@ -1,8 +1,8 @@
 <?php
 
-use Eloquent;
+//use Eloquent;
 
-class StudentGoodDeeds extends Eloquent {
+class StudentGoodDeeds extends \Eloquent {
 
     protected $table = 'gooddeed_student';
 

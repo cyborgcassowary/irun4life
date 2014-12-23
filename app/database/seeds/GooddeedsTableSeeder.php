@@ -7,7 +7,7 @@ class GooddeedsTableSeeder extends Seeder {
 
 	public function run()
 	{
-		Eloquent::unguard();
+//		Eloquent::unguard();
 
 		$faker = Faker::create();
 

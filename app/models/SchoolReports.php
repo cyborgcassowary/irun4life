@@ -1,8 +1,8 @@
 <?php 
 
-use Eloquent;
+//use Eloquent;
 
-class SchoolReports extends Eloquent {
+class SchoolReports extends \Eloquent {
 
 	//Eloquent::unguard();
 

@@ -10,7 +10,7 @@ class ParentTableSeeder extends Seeder {
 
 	public function run()
 	{
-		Eloquent::unguard();
+//		Eloquent::unguard();
 
 		// Harrison Ford
 		Parents::create([

@@ -16,6 +16,7 @@ class CreateMileageTable extends Migration {
 			$table->increments('id');
 			$table->string('activity_name');
 			$table->decimal('total_miles', 5, 2);
+			$table->date('date');
 			$table->timestamps();
 		});
 	}

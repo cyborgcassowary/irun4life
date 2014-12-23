@@ -1,8 +1,8 @@
 <?php 
 
-use Eloquent;
+//use Eloquent;
 
-class SchoolSchoolReports extends Eloquent {
+class SchoolSchoolReports extends \Eloquent {
 
 	protected $table = 'school_schoolreport';
 

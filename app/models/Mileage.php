@@ -1,8 +1,7 @@
 <?php 
 
-use Eloquent;
 
-class Mileage extends Eloquent {
+class Mileage extends \Eloquent {
 
 	protected $table = 'mileage';
 

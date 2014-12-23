@@ -18,9 +18,9 @@
 				<a data-toggle="pill" href="#student">Student</a>
 			</li>
 
-			<li>
-				<a data-toggle="pill" href="#parent">Parent</a>
-			</li>
+			{{--<li>--}}
+				{{--<a data-toggle="pill" href="#parent">Parent</a>--}}
+			{{--</li>--}}
         </ul>
 
 <br /><br />
@@ -32,11 +32,13 @@
 
                 <div class="col-xs-12">
 
-                Student
-                	{{ Form::open(['route' => 'studentdash.create']) }}
+                {{--Student--}}
+                	{{ Form::open(array('url' => 'student/1', 'method' => 'get')) }}
+
+					{{--['route' => 'studentdash.create']--}}
         				<div class="form-group">
         				<!--<input type="text" class="form-control" placeholder="Username"><br />-->
-        				{{ Form::text('username', null, ['placeholder' => 'Username', 'class' => 'form-control']) }}
+        				{{ Form::text('username', 'MFord', ['placeholder' => 'Username', 'class' => 'form-control']) }}
         				</div>
         				<div class="form-group">
         				{{ Form::password('password', ['class' => 'form-control']) }}

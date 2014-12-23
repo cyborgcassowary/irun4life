@@ -1,8 +1,8 @@
 <?php namespace ;
 
-use Eloquent;
+//use Eloquent;
 
-class Admins extends Eloquent {
+class Admins extends \Eloquent {
 
 	protected $fillable = [];
 

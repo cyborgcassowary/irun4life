@@ -4,9 +4,10 @@ use Illuminate\Auth\UserTrait;
 use Illuminate\Auth\UserInterface;
 use Illuminate\Auth\Reminders\RemindableTrait;
 use Illuminate\Auth\Reminders\RemindableInterface;
-use Eloquent, Hash;
+use Illuminate\Database\Eloquent;
+use Illuminate\Hashing;
 
-class Parents extends Eloquent implements UserInterface, RemindableInterface {
+class Parents extends \Eloquent implements UserInterface, RemindableInterface {
 
 	use UserTrait, RemindableTrait;
 

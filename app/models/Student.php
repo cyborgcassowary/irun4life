@@ -9,7 +9,7 @@ use Illuminate\Auth\Reminders\Collection;
 // use Illuminate\Auth\UserInterface::getAuthPassword;
 // use Illuminate\Auth\UserInterface::getRememberToken;
 
-class Student extends Eloquent implements UserInterface, RemindableInterface{
+class Student extends \Eloquent implements UserInterface, RemindableInterface{
 
 	use UserTrait, RemindableTrait;
 

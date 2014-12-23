@@ -12,7 +12,7 @@ class SchoolTableSeeder extends Seeder {
 
 	public function run()
 	{
-		Eloquent::unguard();
+		//Eloquent::unguard();
 
 		$faker = Faker::create();
 

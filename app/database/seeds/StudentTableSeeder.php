@@ -9,7 +9,7 @@ class StudentTableSeeder extends Seeder {
 	 */
 	public function run()
 	{
-		Eloquent::unguard();
+		//Eloquent::unguard();
 		//DB::table('student')->delete();
 
 		// $this->call('UserTableSeeder'); 

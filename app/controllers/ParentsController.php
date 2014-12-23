@@ -12,7 +12,12 @@ class ParentsController extends Controller {
 	 */
 	public function index()
 	{
-		//
+		$dir = Student::find($id);
+
+
+
+
+		return View::make('student.show', compact('dir'));
 	}
 
 	/**

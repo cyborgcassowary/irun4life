@@ -11,16 +11,26 @@
 	<div class="container">
 		<div class="row">
 		<div class="col-sm-6">
-			Administrator and Director Sign In
+			<h1>Director Sign In </h1>
 
 
-                	<form>
-        				<input type="text" class="form-control" placeholder="Email"><br />
-        				<input type="password" class="form-control" placeholder="Password">
-        				<br />
-        				<button type="submit" class="btn btn-default">Sign In</button>
-<br /> <br /> <div style="font-size:80%;"> <a href="#">Forgot Password?</a></div>
-        			</form>
+			{{ Form::open(array('url' => 'director', 'method' => 'get')) }}
+
+			{{--['route' => 'studentdash.create']--}}
+			<div class="form-group">
+				<!--<input type="text" class="form-control" placeholder="Username"><br />-->
+				{{ Form::text('email', 'ryan@ryanhettler.com', ['class' => 'form-control']) }}
+			</div>
+			<div class="form-group">
+				{{ Form::password('password', ['class' => 'form-control']) }}
+			</div>
+			<!--<input type="password" class="form-control" placeholder="Password">-->
+			<div class="form-group">
+				<!--<button type="submit" class="btn btn-default">Sign In</button>-->
+				{{ Form::submit('Sign In', ['class' => 'btn btn-default']) }}
+
+			</div>
+			{{ Form::close() }}
 
 		</div>
 

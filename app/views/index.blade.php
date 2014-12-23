@@ -18,9 +18,9 @@
 				<a data-toggle="pill" href="#student">Student</a>
 			</li>
 
-			<li>
-				<a data-toggle="pill" href="#parent">Parent</a>
-			</li>
+			{{--<li>--}}
+				{{--<a data-toggle="pill" href="#parent">Parent</a>--}}
+			{{--</li>--}}
         </ul>
 
 <br /><br />

@@ -9,7 +9,7 @@ class SchoolSchoolReportsTableSeeder extends Seeder {
 	 */
 	public function run()
 	{
-		Eloquent::unguard();
+		//Eloquent::unguard();
 
 		
 

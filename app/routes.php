@@ -41,6 +41,14 @@ Route::get('studentschools/{id}', function($id){
 	return DB::select('SELECT student.id AS sid, student.username AS username, student.firstname AS firstname, student.lastname AS lastname, student.grade_id AS grade, schools.name AS school FROM student INNER JOIN schools ON student.school_id = schools.id WHERE student.id ='. $id );
 });
 
+
+Route::get('student/{id}/miles/view', 'StudentController@viewmiles')->where('id', '\d+');
+
+
+
+Route::get('director', 'DirectorSessionsController@index');
+
+
 // routes for student login / dashboard
 
 Route::get('studentdashlogin', 'StudentSessionsController@create');

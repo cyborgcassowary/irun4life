@@ -60,8 +60,7 @@ return array(
 			'password'  => getenv('DB_PASSWORD'),
 			'charset'   => 'utf8',
 			'collation' => 'utf8_unicode_ci',
-			'prefix'    => '',
-			'port'     => getenv('DB_PORT')
+			'prefix'    => ''
 		),
 
 		'pgsql' => array(

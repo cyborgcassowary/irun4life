@@ -1,8 +1,8 @@
 <?php
 
-use Eloquent;
+//use Eloquent;
 
-class ParentStudent extends Eloquent {
+class ParentStudent extends \Eloquent {
 
 	protected $table = 'parent_student';
 

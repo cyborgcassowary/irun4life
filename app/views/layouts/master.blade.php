@@ -3,21 +3,21 @@
 <head>
 	@yield('html_header')
 
-	<link rel="shortcut icon" href="icons/favicon.ico">
+	<link rel="shortcut icon" href="/icons/favicon.ico">
 
-	<link rel="apple-touch-icon-precomposed" sizes="144x144" href="icons/apple-touch-icon-144-precomposed.png">
+	<link rel="apple-touch-icon-precomposed" sizes="144x144" href="/icons/apple-touch-icon-144-precomposed.png">
 
-	<link rel="apple-touch-icon-precomposed" sizes="114x114" href="icons/apple-touch-icon-114-precomposed.png">
+	<link rel="apple-touch-icon-precomposed" sizes="114x114" href="/icons/apple-touch-icon-114-precomposed.png">
 
-	<link rel="apple-touch-icon-precomposed" sizes="72x72" href="icons/apple-touch-icon-72-precomposed.png">
+	<link rel="apple-touch-icon-precomposed" sizes="72x72" href="/icons/apple-touch-icon-72-precomposed.png">
 
-	<link rel="apple-touch-icon-precomposed" href="icons/apple-touch-icon-57-precomposed.png">
+	<link rel="apple-touch-icon-precomposed" href="/icons/apple-touch-icon-57-precomposed.png">
 
 	<meta name="apple-mobile-web-app-capable" content="yes">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
-  <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
-  <link rel="stylesheet" type="text/css" href="css/main.css">
+  <link rel="stylesheet" type="text/css" href="/css/bootstrap.min.css">
+  <link rel="stylesheet" type="text/css" href="/css/main.css">
      
 
 	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
@@ -33,12 +33,12 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button> -->
-          <a class="navbar-brand" href="{{URL::to('/')}}"><img src="images/logo.png" alt="iRun4Life" class="logo" /></a>
+          <a class="navbar-brand" href="{{URL::to('/')}}"><img src="/images/logo.png" alt="iRun4Life" class="logo" /></a>
         </div>
        
       <div id="navbar" class="collapse navbar-collapse">
           <ul class="nav navbar-nav">
-            <li class="active"><a href="#">Home</a></li>
+            {{--<li class="active"><a href="#">Home</a></li>--}}
             {{--<li><a href="#about">About</a></li>--}}
             {{--<li><a href="#contact">Contact</a></li>--}}
             {{--<li class="dropdown">--}}
@@ -63,13 +63,13 @@
 
 <div class="footer">
       <div class="container">
-        <p class="text-muted">&copy; 2014, iRun4Life. {{link_to('adminlogin', 'Director &amp; Administrator Login Page', $attributes = array('class'=>'anchor'), $secure = null);}} </p>
+        <p class="text-muted">&copy; 2014, iRun4Life. {{link_to('adminlogin', 'Director Login Page', $attributes = array('class'=>'anchor'), $secure = null);}} </p>
       </div>
    </div>
 
-    <script type="text/javascript" src="js/jquery.js"></script>
-    <script type="text/javascript" src="js/bootstrap.min.js"></script>
-    <script type="text/javascript" src="js/irun.js"></script>
+    <script type="text/javascript" src="/js/jquery.js"></script>
+    <script type="text/javascript" src="/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="/js/irun.js"></script>
     <script>$('#flash-overlay-modal').modal();</script>
 
     @yield('scripts')

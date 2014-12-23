@@ -1,4 +1,4 @@
-<?php 
+<?php //
 
 class SchoolReportTableSeeder extends Seeder {
 
@@ -9,7 +9,7 @@ class SchoolReportTableSeeder extends Seeder {
 	 */
 	public function run()
 	{
-		Eloquent::unguard();
+//		Eloquent::unguard();
 
 		// $this->call('UserTableSeeder'); 
 

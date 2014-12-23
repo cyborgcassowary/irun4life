@@ -1,8 +1,9 @@
-<?php namespace ;
+<?php
 
-use Illuminate\Routing\Controller;
-
-class DirectorSessionsController extends Controller {
+//use Illuminate\Routing\Controller;
+//
+//class DirectorSessionsController extends Controller {
+class DirectorSessionsController extends BaseController {
 
 	/**
 	 * Display a listing of the resource.
@@ -13,6 +14,15 @@ class DirectorSessionsController extends Controller {
 	public function index()
 	{
 		//
+
+		$school = DB::select('select * FROM schools where id = ?', array(1));
+
+		$students = DB::select('select * from student where school_id = ?', array(1));
+
+		//$students = Student::where('school_id', '=', 1);
+
+		//return $school;
+		return View::make('director.index', compact('students', 'school'));
 	}
 
 	/**

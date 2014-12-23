@@ -389,6 +389,7 @@
     "labels.less",
     "thumbnails.less",
     "alerts.less",
+    "list-group.less",
     "responsive-embed.less",
     "close.less",
     "component-animations.less",
@@ -399,5 +400,5 @@
   "js": [
     "alert.js"
   ],
-  "customizerUrl": "http://getbootstrap.com/customize/?id=61f9173b672135eeabf3"
+  "customizerUrl": "http://getbootstrap.com/customize/?id=3dda88cc1ff586f33ceb"
 }

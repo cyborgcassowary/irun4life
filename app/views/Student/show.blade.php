@@ -3,9 +3,9 @@
 @section('content')
 
 <div class="container">
-    <div class="row" style="overflow: hidden; padding:20px; border: 1px solid #000;">
+    <div class="row" style="overflow: hidden; padding:20px; ">
         <div class="col-sm-4">
-            <img src="http://lorempixel.com/300/300/people/" class="img-responsive" />
+            <img src="http://lorempixel.com/300/300/abstract/" class="img-responsive" />
         </div>
 
         <div class="col-sm-6" id="student-graph"></div>
@@ -24,7 +24,7 @@
 
     </div>
 
-    <div class="row" style="overflow: hidden; padding:20px; border: 1px solid #000;">
+    <div class="row" style="overflow: hidden; padding:20px; ">
         <div class="col-md-14"><h4>Total Miles for past 7 days: 78</h4></div>
             <div class="col-md-2 col-sm-7"><a href="" style="display:block; background:#e95141; color:#fff; text-align: center; padding: 20px 4px; "><strong>12</strong> Miles<br />12/16/2014</a></div>
             <div class="col-md-2 col-sm-7"><a href="" style="display:block; background:#e63c2b; color:#fff; text-align: center; padding: 20px 4px; "><strong>10</strong> Miles<br />12/17/2014</a></div>
@@ -34,29 +34,39 @@
             <div class="col-md-2 col-sm-7"><a href="" style="display:block; background:#991e12; color:#fff; text-align: center; padding: 20px 4px; "><strong>12</strong> Miles<br />12/21/2014</a></div>
             <div class="col-md-2 col-sm-7"><a href="" style="display:block; background:#821a0f; color:#fff; text-align: center; padding: 20px 4px; "><strong>24</strong> Miles<br />12/22/2014</a></div>
 
+
+    <div class="col-sm-2 col-sm-offset-12">
+        {{ link_to("student/$stu->id/miles/view", 'view all miles') }}
+    </div>
+
         </div>
 
         <div class="row">
-        <h1>Good Deeds</h1>
+        <h3>Post a Good Deed</h3>
 
         {{ Form::open() }}
                {{ Form::text('Good Deed', null, ['placeholder' => 'ex. walked dog, feed cat.', 'class' => 'form-control']) }}
 
+
+
         {{ Form::close() }}
 
-        <div class="col-sm-10">
-{{--            <h1>Miles {{ link_to("student/$stu->id/miles/add", '+', array('title'=>'Add to Mileage')) }}</h1>--}}
-<ul>
-            @foreach($miles as $m)
-                <li rel="{{$m->id}}">{{$m->activity_name}} : {{$m->total_miles}} - {{link_to("student/$m->id/miles/$m->mid", 'edit')}}</li>
-            @endforeach
-</ul>
+        <div class="col-sm-8">
+            {{--<h1>Miles {{ link_to("student/$stu->id/miles/add", '+', array('title'=>'Add to Mileage')) }}</h1>--}}
+{{--<ul>--}}
+            {{--@foreach($miles as $m)--}}
+                {{--<li rel="{{$m->id}}">{{$m->activity_name}} : {{$m->total_miles}} - {{link_to("student/$m->id/miles/$m->mid", 'edit')}}</li>--}}
+            {{--@endforeach--}}
+{{--</ul>--}}
 
 {{--            <h1>Good Deeds {{ link_to("student/$stu->id/gooddeeds/add", '+', array('title'=>'Add to Good Deeds')) }}</h1>--}}
-<ul>
+
+            <h4>Latests Good Deeds</h4>
+            <ul class="list-group">
             @foreach($gooddeeds as $gd)
-                            <li>{{$gd->deed_name}} : {{$gd->score}}</li>
-                        @endforeach
+                <li class="list-group-item">{{$gd->deed_name}}  </li>
+                    {{--{{$gd->score}}--}}
+            @endforeach
 </ul>
 
 

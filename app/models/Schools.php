@@ -1,9 +1,9 @@
 <?php 
 
-use Eloquent;
+//use Eloquent;
 use Illuminate\Auth\Reminders\Collection;
 
-class Schools extends Eloquent {
+class Schools extends \Eloquent {
 
 	//use Eloquent;
 
@@ -17,8 +17,12 @@ class Schools extends Eloquent {
 
 	//return $this->belongsToMany('SchoolReports');
 
-	function students(){
-		return $this->hasMany('Student');
-	}
+//	function students(){
+//		return $this->hasMany('Student');
+//	}
+//
+//	function director(){
+//		return $this->hasOne('Directors');
+//	}
 
 }

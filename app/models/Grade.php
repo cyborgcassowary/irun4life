@@ -1,9 +1,9 @@
 <?php 
 
-use Eloquent;
+//use Eloquent;
 use Illuminate\Auth\Reminders\Collection;
 
-class Grade extends Eloquent {
+class Grade extends \Eloquent {
 
 	public $timestamps = false;
 

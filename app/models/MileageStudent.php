@@ -1,6 +1,6 @@
 <?php
 
-class MileageStudent extends Eloquent {
+class MileageStudent extends \Eloquent {
 
 	//Eloquent::unguard();
 

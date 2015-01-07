@@ -12,15 +12,18 @@
 */
 
 
+Route::get('/', function(){
+	return View::make('dummy');
+});
+
 # CSRF Protection
 Route::when('*', 'csrf', ['POST', 'PUT', 'PATCH', 'DELETE']);
 
 # Static Pages. Redirecting admin so admin cannot access these pages.
 Route::group(['before' => 'redirectAdmin'], function()
 {
-	Route::get('/', ['as' => 'home', 'uses' => 'PagesController@getHome']);
+	Route::get('/h', ['as' => 'home', 'uses' => 'PagesController@getHome']);
 	Route::get('/adminlogin', ['as' => 'adminlogin', 'uses' => 'PagesController@adminlogin']);
-
 });
 
 // Parent Registration
@@ -32,11 +35,22 @@ Route::get('parents', function(){
 	return View::make('parents/index')->with('parents', $parents);
 });
 
+Route::get('register', ['as' => 'register_path', 'uses' => 'RegistrationController@create']);
+
+Route::post('register', [
+	'as' => 'register_path',
+	'uses' => 'RegistrationController@store'
+]);
+
 // Student Query tests
+
+//Route::get('admin', array('as' => 'adminpage', 'before' => 'auth|crsf', 'uses' => 'SessionController@adminPage'));
 
 Route::get('student', 'StudentController@index');
 Route::get('student/{id}', 'StudentController@show')->where('id', '\d+');
 
+//Route::get('student', array('uses' => 'StudentController@index'));
+//'as' => 'loggedin', 'before' => 'auth|csrf',
 Route::get('studentschools/{id}', function($id){
 	return DB::select('SELECT student.id AS sid, student.username AS username, student.firstname AS firstname, student.lastname AS lastname, student.grade_id AS grade, schools.name AS school FROM student INNER JOIN schools ON student.school_id = schools.id WHERE student.id ='. $id );
 });
@@ -65,3 +79,6 @@ Route::get('studentdata', function(){
 	return Student::all();
 });
 
+//Route::get('{ember?}', function(){
+//	return View::make('ember');
+//})->where('ember', '.*');

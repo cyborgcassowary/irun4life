@@ -10,7 +10,8 @@
 
     @include('layouts.partials.errors')
 
-    {{ Form::open(['route' => 'register_path']) }}
+    {{ Form::open() }}
+    {{--  ['route' => 'register'] This doesn't work and is unneeded. So much time wasted figuring this out. --}}
 
         {{-- First Name --}}
         <div class="form-group">

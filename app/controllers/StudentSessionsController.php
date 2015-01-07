@@ -12,22 +12,16 @@ class StudentSessionsController extends Controller {
 	 */
 	public function index($id)
 	{
-		//if(Auth::user()) return Redirect::to('/studentdash');
-
-		$student = Student::find($id);
+		if(Auth::student()) return Redirect::to('/studentdash');
 
 		$stu = Student::find($id);
 
-
-
 		$miles = DB::select('SELECT DISTINCT student.id, student.username, mileage.id AS mid, mileage.activity_name, mileage.total_miles FROM student INNER JOIN mileage_student ON mileage_student.student_id = student.id INNER JOIN mileage ON mileage.id = mileage_student.mileage_id WHERE student.id = '.$id);
 		$gooddeeds = DB::select('SELECT student.id, student.username, gooddeeds.deed_name, gooddeeds.score FROM student INNER JOIN gooddeed_student ON gooddeed_student.student_id = student.id INNER JOIN gooddeeds ON gooddeeds.id = gooddeed_student.gooddeed_id WHERE student.id = '.$id);
-		// return $task;
+
 		return View::make('student.show', compact('stu', 'miles', 'gooddeeds'));
 
-		return View::make('student.index', compact('student'));
 
-		//return View::make('studentsessions.index');
 	}
 
 	public function create()

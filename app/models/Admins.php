@@ -1,9 +1,11 @@
-<?php namespace ;
+<?php
 
 //use Eloquent;
 
 class Admins extends \Eloquent {
 
-	protected $fillable = [];
+	protected $table = ['superadmins'];
+	protected $guarded = [];
+	protected $fillable = ['firstname', 'lastname', 'password', 'school'];
 
 }

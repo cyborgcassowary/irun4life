@@ -4,35 +4,73 @@
 
 <div class="container">
     <div class="row" style="overflow: hidden; padding:20px; ">
-        <div class="col-sm-4">
-            <img src="http://lorempixel.com/300/300/abstract/" class="img-responsive" />
+
+        <div class="col-sm-14" style="text-align:center;">
+                     <h3>Welcome back  {{ $stu->firstname }}   </h3>
+{{--  {{ $stu->username }} --}}
+                                       <article class="col-sm-6 col-sm-offset-3">
+                                        {{--<p>Real name: {{ $stu->lastname }} </p>--}}
+                                       	{{--<p>Grade: {{ $stu->grade->grade }} Grade</p>--}}
+                                       	{{--<p>Age: {{ $stu->age }} </p>--}}
+                                       	{{--<p>School: {{ $stu->school->name }}</p>--}}
+
+                     </article>
         </div>
 
-        <div class="col-sm-6" id="student-graph"></div>
+        <div class="col-sm-14" id="student-graph"></div>
 
-        <div class="col-sm-4">
-             <h3>Welcome {{ $stu->username }}  </h3>
 
-                               <article>
-                                <p>Real name: {{ $stu->firstname }} {{ $stu->lastname }} </p>
-                               	<p>Grade: {{ $stu->grade->grade }} Grade</p>
-                               	<p>Age: {{ $stu->age }} </p>
-                               	<p>School: {{ $stu->school->name }}</p>
-
-             </article>
-        </div>
 
     </div>
 
     <div class="row" style="overflow: hidden; padding:20px; ">
-        <div class="col-md-14"><h4>Total Miles for past 7 days: 78</h4></div>
-            <div class="col-md-2 col-sm-7"><a href="" style="display:block; background:#e95141; color:#fff; text-align: center; padding: 20px 4px; "><strong>12</strong> Miles<br />12/16/2014</a></div>
-            <div class="col-md-2 col-sm-7"><a href="" style="display:block; background:#e63c2b; color:#fff; text-align: center; padding: 20px 4px; "><strong>10</strong> Miles<br />12/17/2014</a></div>
-            <div class="col-md-2 col-sm-7"><a href="" style="display:block; background:#de2b1a; color:#fff; text-align: center; padding: 20px 4px; "><strong>16</strong> Miles<br />12/18/2014</a></div>
-            <div class="col-md-2 col-sm-7"><a href="" style="display:block; background:#c72717; color:#fff; text-align: center; padding: 20px 4px; "><strong>4</strong> Miles<br />12/19/2014</a></div>
-            <div class="col-md-2 col-sm-7"><a href="" style="display:block; background:#b02314; color:#fff; text-align: center; padding: 20px 4px; "><strong>15</strong> Miles<br />12/20/2014</a></div>
-            <div class="col-md-2 col-sm-7"><a href="" style="display:block; background:#991e12; color:#fff; text-align: center; padding: 20px 4px; "><strong>12</strong> Miles<br />12/21/2014</a></div>
-            <div class="col-md-2 col-sm-7"><a href="" style="display:block; background:#821a0f; color:#fff; text-align: center; padding: 20px 4px; "><strong>24</strong> Miles<br />12/22/2014</a></div>
+        <div class="col-md-14"><h3 style="text-align:center;">Add Miles</h3></div>
+            <div class="col-md-2 col-sm-2"> {{link_to('moremiles', '<', $attributes = array('class'=>'', 'style'=> 'font-size:50px'), $secure = null);}} </div>
+
+             {{--@foreach($miles as $m)--}}
+            {{--<div class="col-md-4 col-sm-4"><a href="" style="display:block; background:#fff; border color:#fff; text-align: center; padding: 20px 4px; ">--}}
+{{--                {{ $m->day }}<br /><br />--}}
+{{--                {{ $m->date }} <br /><br />--}}
+
+{{--                <h2>{{ $m->count }}</h2>--}}
+
+
+              {{--</a></div>--}}
+            {{--@endforeach--}}
+
+            <div class="col-md-4 col-sm-4"><a href="" style="display:block; background:#fff; border:4px solid #2e55ae; min-height:300px; color:#2e55ae; text-align: center; padding: 20px 4px; ">
+                                   Saturday<br>
+                                   January 3, 2014<br><br>
+
+                                   16
+
+
+                                                  </a></div>
+
+
+             <div class="col-md-4 col-sm-4"><a href="" style="display:block; background:#fff; border:4px solid #2e55ae; min-height:300px; color:#2e55ae; text-align: center; padding: 20px 4px; ">
+                                   Sunday<br>
+                                   January 4, 2014<br><br>
+
+                                   12
+
+
+                                                  </a></div>
+
+             <div class="col-md-4 col-sm-4"><a href="" style="display:block; background:#fff; border:4px solid #2e55ae; min-height:300px; color:#2e55ae; text-align: center; padding: 20px 4px; ">
+           Monday<br>
+           January 5, 2014<br><br>
+
+           4
+
+
+                          </a></div>
+
+
+
+
+
+
 
 
     <div class="col-sm-2 col-sm-offset-12">
@@ -42,13 +80,10 @@
         </div>
 
         <div class="row">
-        <h3>Post a Good Deed</h3>
+        <h3 style="text-align:center;">Add Deeds</h3>
 
         {{ Form::open() }}
                {{ Form::text('Good Deed', null, ['placeholder' => 'ex. walked dog, feed cat.', 'class' => 'form-control']) }}
-
-
-
         {{ Form::close() }}
 
         <div class="col-sm-8">

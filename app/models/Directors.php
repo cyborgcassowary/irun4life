@@ -16,7 +16,7 @@ class Directors extends \Eloquent { //implements UserInterface, RemindableInterf
 
 	protected $table = ['schooldirectors'];
 	protected $guarded = [];
-//	protected $fillable = ['email', 'firstname', 'lastname', 'password', 'school'];
+	protected $fillable = ['firstname', 'lastname', 'password', 'school'];
 
 
 //	function school(){

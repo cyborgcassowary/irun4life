@@ -55,12 +55,54 @@ class RegistrationController extends \BaseController {
 			Input::only('firstname', 'lastname', 'email', 'password')
 		);
 
-		Auth::login($parent);
+//		$attempt = Auth::parent()->attempt(array(
+//			'email'     => $input['email'],
+//			'password'  => $input['password']
+//		));
 
+		//Auth::login($parent);
+		Auth::parent()->login($parent);
+
+
+//		if ($parent) return 'Welcome '. Auth::parent()->get()->username; //Redirect::intended('/');
+//		else dd('problem');
+		//dd('problem');
 		Flash::overlay('Glad to have you as a new iRun4Life Parent!');
 
 		return Redirect::home()->with('flash_message', 'Welcome aboard!');
 
+//		Flash::overlay('Unable to log you in as a Parent.');
+//		return Redirect::home()->with('flash_message', 'Login Failed.');
 	}
+
+
+	public function createstudent(){
+		return View::make('registration.createstudent');
+	}
+
+	public function storestudent()
+	{
+
+	}
+
+	public function createdirector(){
+		return View::make('registration.createdirector');
+	}
+
+	public function storedirector()
+	{
+
+	}
+
+	public function createAdmin()
+	{
+		return View::make('registration.createadmin');
+	}
+
+	public function storeAdmin()
+	{
+
+	}
+
 
 }

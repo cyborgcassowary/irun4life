@@ -34,7 +34,7 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand" href="{{URL::to('/')}}"><img src="/images/logo.png" alt="iRun4Life" class="logo" /></a>
+          <a class="navbar-brand" href="{{URL::to('/h')}}"><img src="/images/logo.png" alt="iRun4Life" class="logo" /></a>
         </div>
        
       <div id="navbar" class="navbar-collapse navbar-right">
@@ -51,7 +51,7 @@
                           {{--<li><a href="#">One more separated link</a></li>--}}
                         {{--</ul>--}}
                       {{--</li>--}}
-            <li><a href="{{URL::to('/')}}">Log Out</a></li>
+            <li><a href="{{URL::to('/h')}}">Log Out</a></li>
             {{--<li><a href="#about">About</a></li>--}}
             {{--<li><a href="#contact">Contact</a></li>--}}
             {{--<li class="dropdown">--}}

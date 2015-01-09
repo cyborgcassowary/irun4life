@@ -17,7 +17,7 @@ class StudentController extends \BaseController {
 
 
 
-		return View::make('student.index', compact('student'));
+		return View::make('Student.index', compact('student'));
 
 
 
@@ -34,7 +34,7 @@ class StudentController extends \BaseController {
 
 
 
-		return View::make('student.show', compact('stu', 'miles', 'gooddeeds'));
+		return View::make('Student.show', compact('stu', 'miles', 'gooddeeds'));
 
 	}
 
@@ -52,7 +52,7 @@ class StudentController extends \BaseController {
 
 //
 
-		return View::make('student.show', compact('stu', 'miles', 'gooddeeds'));
+		return View::make('Student.show', compact('stu', 'miles', 'gooddeeds'));
 	}
 
 //	public function
@@ -62,7 +62,7 @@ class StudentController extends \BaseController {
 
 		$miles = DB::select('SELECT DISTINCT student.id, student.username, mileage.id AS mid, mileage.activity_name, mileage.total_miles FROM student INNER JOIN mileage_student ON mileage_student.student_id = student.id INNER JOIN mileage ON mileage.id = mileage_student.mileage_id WHERE student.id = '.$id);
 
-		return View::make('student.viewmiles', compact('stu', 'miles'));
+		return View::make('Student.viewmiles', compact('stu', 'miles'));
 	}
 
 	public function viewgooddeeds($id){
@@ -70,7 +70,7 @@ class StudentController extends \BaseController {
 
 		$gooddeeds = DB::select('SELECT student.id, student.username, gooddeeds.deed_name, gooddeeds.score FROM student INNER JOIN gooddeed_student ON gooddeed_student.student_id = student.id INNER JOIN gooddeeds ON gooddeeds.id = gooddeed_student.gooddeed_id WHERE student.id = '.$id);
 
-		return View::make('student.viewgooddeeds', compact('stu', 'gooddeeds'));
+		return View::make('Student.viewgooddeeds', compact('stu', 'gooddeeds'));
 	}
 
 	public function addGoodDeed($id){

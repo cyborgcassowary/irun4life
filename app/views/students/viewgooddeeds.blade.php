@@ -1,4 +1,4 @@
-@extends('layouts.student')
+@extends('...layouts.student')
 
 @section('content')
 
@@ -11,8 +11,6 @@
                 <p>Real name: {{ $stu->firstname }} {{ $stu->lastname }} </p>
             </div>
 
-
-
             <div class="col-sm-10">
                 <h1>Miles {{ link_to("student/$stu->id/miles/add", '+', array('title'=>'Add to Mileage')) }}</h1>
                 <ul>
@@ -20,9 +18,6 @@
                         <li rel="{{$m->id}}">{{$m->activity_name}} : {{$m->total_miles}} - {{link_to("student/$m->id/miles/$m->mid", 'edit')}}</li>
                     @endforeach
                 </ul>
-
-
-{{--Taking care of business.--}}
 
             </div>
         </div>

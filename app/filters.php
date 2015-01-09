@@ -1,15 +1,6 @@
 <?php
 
-/*
-|--------------------------------------------------------------------------
-| Application & Route Filters
-|--------------------------------------------------------------------------
-|
-| Below you will find the "before" and "after" events for the application
-| which may be used to do any work before or after a request into your
-| application. Here you may also register your custom route filters.
-|
-*/
+// A new comment to display.
 
 App::before(function($request)
 {
@@ -47,6 +38,8 @@ Route::filter('auth', function()
 		}
 	}
 });
+
+//
 
 // new multiauth filter
 //Route::filter('auth', function()

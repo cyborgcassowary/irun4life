@@ -20,6 +20,7 @@
 
 			{{--<li>--}}
 				{{--<a data-toggle="pill" href="#parent">Parent</a>--}}
+				{{--<a data-toggle="pill" href="#parent">Parent</a>--}}
 			{{--</li>--}}
         </ul>
 

@@ -13,7 +13,7 @@ class StudentController extends \BaseController {
 	{
 
 
-		$student = Student::all();
+		$student = student::all();
 
 
 

@@ -7,6 +7,7 @@
 <style type="text/css">
 body {
   /*background: linear-gradient(90deg, white, gray);*/
+  /*background: linear-gradient(90deg, white, gray);*/
   background-color: #eee;
 }
 

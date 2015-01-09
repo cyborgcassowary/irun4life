@@ -37,6 +37,7 @@
 		Insert extra scripts here... the logic is to deliver different scripts for different users.
 
 		Although, we probably would just give the users a different layout.
+		Although, we probably would just give the users a different layout.
 	 -->
 @stop
 

@@ -12,15 +12,9 @@ class StudentController extends \BaseController {
 	public function index()
 	{
 
-
 		$student = student::all();
 
-
-
 		return View::make('students.index', compact('student'));
-
-
-
 
 	}
 
@@ -53,6 +47,10 @@ class StudentController extends \BaseController {
 //
 
 		return View::make('students.show', compact('stu', 'miles', 'gooddeeds'));
+	}
+
+	public function addMiles(){
+
 	}
 
 //	public function

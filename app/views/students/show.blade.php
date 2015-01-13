@@ -38,7 +38,7 @@
               {{--</a></div>--}}
             {{--@endforeach--}}
 
-            <div class="col-md-4 col-sm-4"><a href="" style="display:block; background:#fff; border:4px solid #2e55ae; min-height:300px; color:#2e55ae; text-align: center; padding: 20px 4px; ">
+            <div class="col-sm-4"><a href="" style="display:block; background:#fff; border:4px solid #2e55ae; min-height:300px; color:#2e55ae; text-align: center; padding: 20px 4px; ">
                                    Saturday<br>
                                    January 3, 2014<br><br>
 
@@ -48,7 +48,7 @@
                                                   </a></div>
 
 
-             <div class="col-md-4 col-sm-4"><a href="" style="display:block; background:#fff; border:4px solid #2e55ae; min-height:300px; color:#2e55ae; text-align: center; padding: 20px 4px; ">
+             <div class="col-sm-4"><a href="" style="display:block; background:#fff; border:4px solid #2e55ae; min-height:300px; color:#2e55ae; text-align: center; padding: 20px 4px; ">
                                    Sunday<br>
                                    January 4, 2014<br><br>
 
@@ -57,7 +57,7 @@
 
                                                   </a></div>
 
-             <div class="col-md-4 col-sm-4"><a href="" style="display:block; background:#fff; border:4px solid #2e55ae; min-height:300px; color:#2e55ae; text-align: center; padding: 20px 4px; ">
+             <div class="col-sm-4"><a href="" style="display:block; background:#fff; border:4px solid #2e55ae; min-height:300px; color:#2e55ae; text-align: center; padding: 20px 4px; ">
            Monday<br>
            January 5, 2014<br><br>
 

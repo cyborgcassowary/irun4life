@@ -46,8 +46,10 @@ Route::post('register', [
 
 //Route::get('admin', array('as' => 'adminpage', 'before' => 'auth|crsf', 'uses' => 'SessionController@adminPage'));
 
-Route::get('student', 'StudentController@index');
-Route::get('student/{id}', 'StudentController@show')->where('id', '\d+');
+//Route::get('student', 'StudentController@index');
+
+Route::get('student/', 'StudentController@index');
+Route::post('student/', 'StudentController@show')->where('id', '\d+');
 
 //Route::get('student', array('uses' => 'StudentController@index'));
 //'as' => 'loggedin', 'before' => 'auth|csrf',

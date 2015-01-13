@@ -35,8 +35,9 @@
                 <div class="col-xs-12">
 
                 {{--Student--}}
-                	{{ Form::open(array('url' => 'student/1', 'method' => 'get')) }}
-{{--  --}}
+                	{{ Form::open(array('action' => 'StudentController@show', $student->id)) }}
+
+{{--  array('url' => 'student/1', 'method' => 'get') --}}
 {{-- ['route' => 'studentdash'] --}}
 
         				<div class="form-group">

@@ -56,6 +56,15 @@ Route::get('studentschools/{id}', function($id){
 });
 
 
+Route::get('schools', function(){
+	return Schools::all();
+});
+
+Route::get('school/{id}', function($id){
+	return Schools::find($id);
+});
+
+
 Route::get('student/{id}/miles/view', 'StudentController@viewmiles')->where('id', '\d+');
 
 

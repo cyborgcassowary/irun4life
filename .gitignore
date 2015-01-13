@@ -6,5 +6,9 @@ composer.lock
 .env.php
 .DS_Store
 Thumbs.db
+.rh_id_dsa.pub
+.id_dsa.pub
+_ide_helper.php
+_ide_helper.php.save
 
 tests/_output/*

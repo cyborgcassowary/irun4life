@@ -37,17 +37,29 @@ class Student extends \Eloquent implements UserInterface, RemindableInterface{
 //	}
 
 	public function grade(){
+
 		return $this->belongsTo('Grade', 'grade_id');
+
 
 //		Call it with Eager loading - Student::find($id)->grade()->get();
 	}
 
 	public function school(){
+
 		return $this->belongsTo('Schools', 'school_id');
+
 
 		//		Call it with Eager loading - Student::find($id)->school()->get();
 	}
 
-	
+
+	public function miles()
+	{
+		return $this->belongsToMany('Mileage');
+	}
+
+	public function deeds(){
+		return $this->belongsToMany('Gooddeeds');
+	}
 
 }

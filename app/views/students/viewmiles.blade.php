@@ -3,21 +3,22 @@
 @section('content')
 
     <div class="container">
-        <div class="row" style="overflow: hidden; padding:20px; border: 1px solid #000;">
-            <div class="col-sm-4">
-                <img src="http://lorempixel.com/300/300/people/" class="img-responsive" />
+        <div class="row" >
+            <div class="col-sm-12">
 
-                <p> {{ $stu->username }} </p>
-                <p>Real name: {{ $stu->firstname }} {{ $stu->lastname }} </p>
+
+                {{--<p> {{ $stu->username }} </p>--}}
+                <h1>Hey {{ $stu->firstname }}! <br /> Below is a list of your all miles. </h1>
             </div>
 
 
 
             <div class="col-sm-10">
-                <h1>Miles {{ link_to("student/$stu->id/miles/add", '+', array('title'=>'Add to Mileage')) }}</h1>
-                <ul>
-                    @foreach($miles as $m)
-                        <li rel="{{$m->id}}">{{$m->activity_name}} : {{$m->total_miles}} - {{link_to("student/$m->id/miles/$m->mid", 'edit')}}</li>
+                <strong style="font-size:18px; line-height:30px;">Add Miles {{ link_to("student/addmiles", '+', array('title'=>'Add to Mileage')) }}</strong>
+                {{--$stu->id--}}
+                <ul class="list-group">
+                    @foreach($rmiles as $m)
+                        <li rel="{{$m->id}}" class="list-group-item"> <strong>Total {{$m->activity_name}}:</strong>  {{$m->total_miles}}  <br /> <strong>Date:</strong> {{$m->date}} <br /><br /> {{link_to("student/$m->id/miles/$m->mid/edit", 'edit')}} | {{link_to("student/$m->id/miles/$m->mid/delete", 'delete')}}</li>
                     @endforeach
                 </ul>
 

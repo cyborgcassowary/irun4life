@@ -18,6 +18,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
   <link rel="stylesheet" type="text/css" href="/css/bootstrap.min.css">
+  <link rel="stylesheet" type="text/css" href="/css/datepicker.css">
   <link rel="stylesheet" type="text/css" href="/css/main.css">
      
 
@@ -84,6 +85,7 @@
     <script type="text/javascript" src="/js/bootstrap.min.js"></script>
     <script type="text/javascript" src="/js/irun.js"></script>
     <script>$('#flash-overlay-modal').modal();</script>
+
 
     @yield('scripts')
 </body>

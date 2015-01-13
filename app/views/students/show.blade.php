@@ -17,75 +17,110 @@
                      </article>
         </div>
 
-        <div class="col-sm-14" id="student-graph"></div>
+        <div class="col-sm-14" id="student-graph">
+
+        {{--<a href="" class="btn btn-primary">Add Miles</a>--}}
+        {{--<a href="" class="btn btn-primary">Add Good Deeds</a>--}}
+
+        {{--</div>--}}
 
 
 
     </div>
 
-    <div class="row" style="overflow: hidden; padding:20px; ">
-        <div class="col-md-14"><h3 style="text-align:center;">Add Miles</h3></div>
-            <div class="col-md-2 col-sm-2"> {{link_to('moremiles', '<', $attributes = array('class'=>'', 'style'=> 'font-size:50px'), $secure = null);}} </div>
 
-             {{--@foreach($miles as $m)--}}
-            {{--<div class="col-md-4 col-sm-4"><a href="" style="display:block; background:#fff; border color:#fff; text-align: center; padding: 20px 4px; ">--}}
-{{--                {{ $m->day }}<br /><br />--}}
-{{--                {{ $m->date }} <br /><br />--}}
+    
 
+    <div class="row" style="overflow: hidden; padding:20px 120px 20px 20px; ">
+        <div class="col-md-14">
+        <h3 style="text-align:center;">Miles</h3>
+        </div>
+            {{--<div class="col-md-2 col-sm-2"> {{link_to('moremiles', '<', $attributes = array('class'=>'', 'style'=> 'font-size:50px'), $secure = null);}} </div>--}}
+            <div class="col-sm-2">
+
+                <a href="{{ URL::to("student/". $stu->id ."/miles/view") }}" class="arrow-link pull-right"><img src="/images/arrow.png" class="responsive-image" alt="View all Miles"/></a>
+            </div>
+             @foreach($rmiles as $m)
+            <div class="col-sm-2 mileagebox pull-right">
+            <a href="" style="display:block; background:#fff; border color:#fff; text-align: center; padding: 20px 4px; ">
+               <strong>Total Miles:</strong><br /> {{ $m->total_miles }}<br /><br />
+               <strong>Date: </strong><br /> {{ $m->date }}
+
+                <br /><br />
 {{--                <h2>{{ $m->count }}</h2>--}}
+              </a></div>
+            @endforeach
+
+            {{--<div class="col-md-4 col-sm-4"><a href="" style="display:block; background:#fff; border:4px solid #2e55ae; min-height:300px; color:#2e55ae; text-align: center; padding: 20px 4px; ">--}}
+                                   {{--Saturday<br>--}}
+                                   {{--January 3, 2014<br><br>--}}
+
+                                   {{--16--}}
 
 
-              {{--</a></div>--}}
-            {{--@endforeach--}}
-
-            <div class="col-md-4 col-sm-4"><a href="" style="display:block; background:#fff; border:4px solid #2e55ae; min-height:300px; color:#2e55ae; text-align: center; padding: 20px 4px; ">
-                                   Saturday<br>
-                                   January 3, 2014<br><br>
-
-                                   16
+                                                  {{--</a></div>--}}
 
 
-                                                  </a></div>
+             {{--<div class="col-md-4 col-sm-4"><a href="" style="display:block; background:#fff; border:4px solid #2e55ae; min-height:300px; color:#2e55ae; text-align: center; padding: 20px 4px; ">--}}
+                                   {{--Sunday<br>--}}
+                                   {{--January 4, 2014<br><br>--}}
+
+                                   {{--12--}}
 
 
-             <div class="col-md-4 col-sm-4"><a href="" style="display:block; background:#fff; border:4px solid #2e55ae; min-height:300px; color:#2e55ae; text-align: center; padding: 20px 4px; ">
-                                   Sunday<br>
-                                   January 4, 2014<br><br>
+                                                  {{--</a></div>--}}
 
-                                   12
+             {{--<div class="col-md-4 col-sm-4"><a href="" style="display:block; background:#fff; border:4px solid #2e55ae; min-height:300px; color:#2e55ae; text-align: center; padding: 20px 4px; ">--}}
+           {{--Monday<br>--}}
+           {{--January 5, 2014<br><br>--}}
 
-
-                                                  </a></div>
-
-             <div class="col-md-4 col-sm-4"><a href="" style="display:block; background:#fff; border:4px solid #2e55ae; min-height:300px; color:#2e55ae; text-align: center; padding: 20px 4px; ">
-           Monday<br>
-           January 5, 2014<br><br>
-
-           4
+           {{--4--}}
 
 
-                          </a></div>
+                          {{--</a></div>--}}
 
-
-
-
-
-
-
-
-    <div class="col-sm-2 col-sm-offset-12">
-        {{ link_to("student/$stu->id/miles/view", 'view all miles') }}
-    </div>
+    {{--<div class="col-sm-2 col-sm-offset-12">--}}
+        {{--{{ link_to("student/$stu->id/miles/view", 'view all miles') }}--}}
+    {{--</div>--}}
 
         </div>
+        <div class="row">
+            <div class="col-sm-8">
+            {{ Form::open() }}
+
+             {{Form::hidden('activity_name', 'Miles')}}
+             {{Form::hidden('date', date("Y-m-d"))}}
+                    <div class="form-group">
+                        {{ Form::label('total_miles', 'Total Miles:') }}
+                        {{ Form::text('total_miles', null, ['class' => 'form-control']) }}
+                    </div>
+
+                    <div class="form-group">
+                            {{ Form::label('parents_participation', 'Parents Participation:') }}
+                            {{Form::checkbox('parents_participation', '3') }}
+                    </div>
+
+                    <div class="form-group">
+                        {{ Form::submit('Add Miles', ['class' => 'btn btn-primary']) }}
+                    </div>
+
+             {{Form::close()}}
+            </div>
+        </div>
+
+            {{--</div>--}}
 
         <div class="row">
-        <h3 style="text-align:center;">Add Deeds</h3>
+        {{--<h3 style="text-align:center;">Add Deeds</h3>--}}
+        <div class="col-sm-6">
 
-        {{ Form::open() }}
-               {{ Form::text('Good Deed', null, ['placeholder' => 'ex. walked dog, feed cat.', 'class' => 'form-control']) }}
+{{ Form::open(array('url' => url('foo/bar'), 'class'=>'form-inline', 'style'=>'padding-top:40px;' )) }}
+               {{ Form::text('Good Deed', null, ['placeholder' => 'ex. walked dog, feed cat.', 'class' => 'form-control', 'style' => 'width:60%;']) }}
+
+               {{ Form::submit('Add a Good Deed', ['class' => 'btn btn-default', 'style' => 'width:36%;']); }}
         {{ Form::close() }}
 
+        </div>
         <div class="col-sm-8">
             {{--<h1>Miles {{ link_to("student/$stu->id/miles/add", '+', array('title'=>'Add to Mileage')) }}</h1>--}}
 {{--<ul>--}}
@@ -98,11 +133,11 @@
 
             <h4>Latests Good Deeds</h4>
             <ul class="list-group">
-            @foreach($gooddeeds as $gd)
-                <li class="list-group-item">{{$gd->deed_name}}  </li>
+                @foreach($gooddeeds as $gd)
+                    <li class="list-group-item">{{$gd->deed_name}}  </li>
                     {{--{{$gd->score}}--}}
-            @endforeach
-</ul>
+                @endforeach
+            </ul>
 
 
         </div>
@@ -113,9 +148,12 @@
 
 @section('scripts')
 
-
+<script src="/js/bootstrap-datepicker.js"></script>
 <script src="/js/d3.min.js"></script>
+
+
 <script type="text/javascript">
+
 function lineChart() { // <-1A
     var _chart = {};
 
@@ -378,10 +416,11 @@ data.forEach(function (series) {
     }
 
 chart.render();
+
 </script>
 
 <script>
-
+/*
 var date = new Date();
 // date.setDate(date.getDate() - 1);
 
@@ -394,9 +433,7 @@ for(i=0; i<7; i++)
 
     console.log(weekofrunning[i] + ' / ' +  weekofrunning.length );
 }
-
-
-
+*/
 </script>
 
 @stop

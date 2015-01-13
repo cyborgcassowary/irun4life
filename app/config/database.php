@@ -54,14 +54,16 @@ return array(
 
 		'mysql' => array(
 			'driver'    => 'mysql',
-			'host'      => 'localhost', //getenv('DB_HOST')
-			'database'  => 'run', //getenv('DB_NAME')
-			'username'  => 'root', //
-			'password'  => 'root', //getenv('DB_PASSWORD')
+			'host'      => getenv('DB_HOST'),
+			'database'  => getenv('DB_NAME'),
+			'username'  => getenv('DB_USERNAME'),
+			'password'  => getenv('DB_PASSWORD'),
 			'charset'   => 'utf8',
 			'collation' => 'utf8_unicode_ci',
 			'prefix'    => ''
 		),
+
+
 
 		'pgsql' => array(
 			'driver'   => 'pgsql',

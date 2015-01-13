@@ -24,6 +24,7 @@ Route::group(['before' => 'redirectAdmin'], function()
 {
 	Route::get('/h', ['as' => 'home', 'uses' => 'PagesController@getHome']);
 	Route::get('/adminlogin', ['as' => 'adminlogin', 'uses' => 'PagesController@adminlogin']);
+	Route::get('/student', ['as' => 'studenthome', 'uses' => 'PagesController@studenthome']);
 });
 
 // Parent Registration
@@ -46,8 +47,9 @@ Route::post('register', [
 
 //Route::get('admin', array('as' => 'adminpage', 'before' => 'auth|crsf', 'uses' => 'SessionController@adminPage'));
 
-Route::get('student', 'StudentController@index');
+Route::get('student', ['as' => 'student', 'uses' => 'StudentController@index']);
 Route::get('student/{id}', 'StudentController@show')->where('id', '\d+');
+
 
 //Route::get('student', array('uses' => 'StudentController@index'));
 //'as' => 'loggedin', 'before' => 'auth|csrf',
@@ -58,12 +60,21 @@ Route::get('studentschools/{id}', function($id){
 
 Route::get('student/{id}/miles/view', 'StudentController@viewmiles')->where('id', '\d+');
 
+Route::get('schools', function(){
+	return Schools::all();
+});
 
+Route::get('school/{id}', function($id){
+	return Schools::find($id);
+});
 
 Route::get('director', 'DirectorSessionsController@index');
 
 
 // routes for student login / dashboard
+
+Route::get('/student/addmiles', 'StudentController@milesForm');
+Route::post('/student/addmiles', ['as' => 'addmiles', 'uses' => 'StudentController@addMiles']);
 
 Route::get('studentdashlogin', 'StudentSessionsController@create');
 Route::get('studentdashlogout', 'StudentSessionsController@destroy');
@@ -77,6 +88,14 @@ Route::resource('studentdash', 'StudentSessionsController');
 
 Route::get('studentdata', function(){
 	return Student::all();
+});
+
+Route::get('latestmiles', function(){
+
+	//return Student::orderBy('id', 'DESC')->get();
+	return Student::find(1)->miles()->orderBy('date', 'ASC')->take(5)->get();
+//	Student::find(1)->miles()->take(7)->get();
+
 });
 
 //Route::get('{ember?}', function(){

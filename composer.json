@@ -11,7 +11,10 @@
 		"cartalyst/sentry": "2.1.*",
 		"laracasts/flash": "~1.0",
 		"ollieread/multiauth": "3.3.1",
-		"barryvdh/laravel-debugbar": "~1.8"
+		"barryvdh/laravel-debugbar": "~1.8",
+	  	"makzumi/calendar": "dev-master",
+		"marc-mabe/php-enum": "1.2.0",
+		"hrevert/day-of-week": "dev-master"
 	},
 	"require-dev": {
 	  "way/generators": "~3.0",

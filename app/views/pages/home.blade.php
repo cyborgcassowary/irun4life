@@ -11,7 +11,7 @@
 	<div class="container">
 		<div class="row">
 		<div class="col-sm-12"><h1>iRun4Life</h1></div>
-		{{--{{ if (Auth::check()) }} <style>#sidenavLogin{display:none;}</style>--}}
+		{{--{{ if (Auth::student()->check() || Auth::parent()->check() || ) }} <style>#sidenavLogin{display:none;}</style>--}}
 
 			<div class="col-sm-10" id="sidenavLogin">
 

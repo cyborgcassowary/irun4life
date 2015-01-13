@@ -5,8 +5,6 @@
     <div class="container">
         <div class="row" style="overflow: hidden; padding:20px; border: 1px solid #000;">
             <div class="col-sm-4">
-                <img src="http://lorempixel.com/300/300/people/" class="img-responsive" />
-
                 <p> {{ $stu->username }} </p>
                 <p>Real name: {{ $stu->firstname }} {{ $stu->lastname }} </p>
             </div>

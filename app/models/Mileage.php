@@ -7,4 +7,9 @@ class Mileage extends \Eloquent {
 
 	protected $fillable = ['activity_name', 'total_miles'];
 
+	public function student()
+	{
+		return $this->belongsToMany('Students');
+	}
+
 }

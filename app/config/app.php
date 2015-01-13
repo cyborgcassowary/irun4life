@@ -128,6 +128,7 @@ return array(
 		'Laracasts\Validation\ValidationServiceProvider',
 		'Laracasts\Flash\FlashServiceProvider',
 		'Barryvdh\Debugbar\ServiceProvider',
+		'Makzumi\Calendar\CalendarServiceProvider',
 		'Clockwork\Support\Laravel\ClockworkServiceProvider'
 	),
 

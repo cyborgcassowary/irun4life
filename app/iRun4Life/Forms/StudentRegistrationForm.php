@@ -1,4 +1,4 @@
-<?php namespace iRun4Life\StudentRegistrationForm;
+<?php namespace iRun4Life\Forms;
 
 use Laracasts\Validation\FormValidator;
 

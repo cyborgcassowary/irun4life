@@ -267,6 +267,10 @@ button {
   display: block;
 }
 
+.orglink{
+  color:#EEA224;
+}
+
 .mileagebox{
   display:block;
   background:#fff;

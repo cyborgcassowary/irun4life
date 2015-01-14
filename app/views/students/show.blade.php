@@ -54,7 +54,7 @@
             </div>
              @foreach($rmiles as $m)
             <div class="col-sm-2 mileagebox pull-right">
-            <a href="" style="display:block; background:#fff; border color:#fff; text-align: center; padding: 20px 4px; ">
+            <div href="" style="display:block; background:#fff; border color:#fff; text-align: center; padding: 20px 4px; ">
             <strong>{{ date('l', strtotime($m->created_at)) }}</strong>
 <br>
                <strong> {{ date('M d Y ', strtotime($m->created_at)) }} </strong>
@@ -63,12 +63,13 @@
 <br/><br/>
 
 
-               <strong>Miles:</strong><br /> {{ $m->total_miles }}<br /><br />
+               <strong>Miles:</strong><br /> <strong style="color:#eea236; font-size:22px;">{{ $m->total_miles }} </strong><br /><br />
 
 
                 <br /><br />
 {{--                <h2>{{ $m->count }}</h2>--}}
-              </a></div>
+              </div>
+              </div>
             @endforeach
 
             {{--<div class="col-md-4 col-sm-4"><a href="" style="display:block; background:#fff; border:4px solid #2e55ae; min-height:300px; color:#2e55ae; text-align: center; padding: 20px 4px; ">--}}

@@ -6,4 +6,6 @@ class Director extends \Eloquent {
 
     protected $table = 'director';
 
+    protected $hidden = array('password', 'remember_token'); //
+
 }

@@ -22,7 +22,7 @@ Route::when('*', 'csrf', ['POST', 'PUT', 'PATCH', 'DELETE']);
 # Static Pages. Redirecting admin so admin cannot access these pages.
 Route::group(['before' => 'redirectAdmin'], function()
 {
-	Route::get('/h', ['as' => 'home', 'uses' => 'PagesController@getHome']);
+	Route::get('/login', ['as' => 'home', 'uses' => 'PagesController@getHome']);
 	Route::get('/adminlogin', ['as' => 'adminlogin', 'uses' => 'PagesController@adminlogin']);
 	Route::get('/student', ['as' => 'studenthome', 'uses' => 'PagesController@studenthome']);
 });
@@ -35,6 +35,8 @@ Route::get('parents', function(){
 //	dd($parents);
 	return View::make('parents/index')->with('parents', $parents);
 });
+
+Route::get('parent/{id}', 'ParentsController@show')->where('id', '\d+');
 
 Route::get('register', ['as' => 'register_path', 'uses' => 'RegistrationController@create']);
 
@@ -99,6 +101,21 @@ Route::get('latestmiles', function(){
 	return Student::find(1)->miles()->orderBy('date', 'ASC')->take(5)->get();
 //	Student::find(1)->miles()->take(7)->get();
 
+});
+
+
+Route::get('studentmiles', function(){
+	$student = Student::first();
+//	$student->miles()->attach(29);
+
+	$student->miles()->sync(array(21, 22, 23));
+
+	return $student->miles;
+});
+
+Route::get('studentlast', function(){
+	$student = Student::first();
+	return $student->orderBy('created_at', 'DESC');
 });
 
 //Route::get('{ember?}', function(){

@@ -12,7 +12,7 @@ class StudentGoodDeedsTableSeeder extends Seeder {
 		foreach(range(1, 10) as $index)
 		{
 			StudentGoodDeeds::create([
-				'gooddeed_id' => $faker->numberBetween($min = 1, $max = 30),
+				'gooddeeds_id' => $faker->numberBetween($min = 1, $max = 30),
 				'student_id' => $faker->numberBetween($min = 1, $max = 4)
 			]);
 

@@ -41,8 +41,8 @@ class StudentController extends \BaseController {
 		$stu = Student::find($id);
 
 		$miles = DB::select('SELECT DISTINCT student.id, student.username, mileage.id AS mid, mileage.activity_name, mileage.total_miles FROM student INNER JOIN mileage_student ON mileage_student.student_id = student.id INNER JOIN mileage ON mileage.id = mileage_student.mileage_id WHERE student.id = '.$id);
-		$gooddeeds = DB::select('SELECT student.id, student.username, gooddeeds.deed_name, gooddeeds.score FROM student INNER JOIN gooddeed_student ON gooddeed_student.student_id = student.id INNER JOIN gooddeeds ON gooddeeds.id = gooddeed_student.gooddeed_id WHERE student.id = '.$id);
-		$rmiles = Student::find(1)->miles()->orderBy('date', 'DESC')->take(5)->get();
+		$gooddeeds = DB::select('SELECT student.id, student.username, gooddeeds.deed_name, gooddeeds.score FROM student INNER JOIN gooddeeds_student ON gooddeeds_student.student_id = student.id INNER JOIN gooddeeds ON gooddeeds.id = gooddeeds_student.gooddeeds_id WHERE student.id = '.$id .' ORDER BY gooddeeds.created_at DESC'); //
+		$rmiles = Student::find(1)->miles()->orderBy('created_at', 'DESC')->take(5)->get();
 
 		return View::make('students.show', compact('stu', 'miles', 'gooddeeds', 'rmiles'));
 
@@ -88,12 +88,16 @@ class StudentController extends \BaseController {
 
 		$this->addGoodDeedForm->validate(Input::all());
 
+
+		$student = Student::first();
+
 		$gooddeed = Gooddeeds::create(
 
 			Input::only('deed_name', 'score', 'date')
 
 		);
 
+		$gooddeed->student()->attach($student->id);
 
 //		$this->registrationForm->validate(Input::all());
 //
@@ -120,11 +124,21 @@ class StudentController extends \BaseController {
 
 		$this->addMileageForm->validate(Input::all());
 
+		$student = Student::first();
+
+
+
 		$miles = Mileage::create(
 
-			Input::only('activity_name', 'total_miles', 'date')
+			Input::only('activity_name', 'date', 'total_miles' )
 
 		);
+
+		//$users = DB::table('users')->get();
+
+		$miles->student()->attach($student->id);
+
+		//$miles->id
 
 
 //		$this->registrationForm->validate(Input::all());
@@ -133,7 +147,7 @@ class StudentController extends \BaseController {
 //			Input::only('firstname', 'lastname', 'email', 'password')
 //		);
 
-		Flash::overlay('Your miles have been added.');
+		Flash::overlay('Your miles have been added. '. $miles->date );
 
 		return Redirect::to('student/1')->with('flash_message', 'Your miles have been added.');
 

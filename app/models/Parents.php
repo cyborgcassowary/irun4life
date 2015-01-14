@@ -35,7 +35,6 @@ class Parents extends \Eloquent implements UserInterface, RemindableInterface {
 	public static function register($firstname, $lastname, $email, $password)
 	{
 		$parent = new static(compact('firstname', 'lastname', 'email', 'password'));
-
 		// raise an event
 	}
 

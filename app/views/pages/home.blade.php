@@ -68,7 +68,7 @@
             <div class="tab-pane" id="parent">
                 <div class="col-xs-12">
 Parent
-                	{{ Form::open() }}
+                	{{ Form::open(array('url' => 'parent/2', 'method' => 'get')) }}
                 	{{--['route' => 'studentdash.create ']--}}
         				<!--<input type="text" class="form-control" placeholder="Email Address">-->
         				<div class="form-group">

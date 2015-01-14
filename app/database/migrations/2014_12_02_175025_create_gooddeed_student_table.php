@@ -12,11 +12,11 @@ class CreateGooddeedStudentTable extends Migration {
 	 */
 	public function up()
 	{
-		Schema::create('gooddeed_student', function(Blueprint $table)
+		Schema::create('gooddeeds_student', function(Blueprint $table)
 		{
 			$table->increments('id');
-			$table->integer('gooddeed_id')->unsigned()->index();
-			$table->foreign('gooddeed_id')->references('id')->on('gooddeeds')->onDelete('cascade');
+			$table->integer('gooddeeds_id')->unsigned()->index();
+			$table->foreign('gooddeeds_id')->references('id')->on('gooddeeds')->onDelete('cascade');
 			$table->integer('student_id')->unsigned()->index();
 			$table->foreign('student_id')->references('id')->on('student')->onDelete('cascade');
 			$table->timestamps();
@@ -31,7 +31,7 @@ class CreateGooddeedStudentTable extends Migration {
 	 */
 	public function down()
 	{
-		Schema::drop('gooddeed_student');
+		Schema::drop('gooddeeds_student');
 	}
 
 }

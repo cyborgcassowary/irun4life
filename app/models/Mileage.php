@@ -9,7 +9,7 @@ class Mileage extends \Eloquent {
 
 	public function student()
 	{
-		return $this->belongsToMany('Students');
+		return $this->belongsToMany('Student');
 	}
 
 }

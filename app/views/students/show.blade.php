@@ -3,7 +3,7 @@
 @section('content')
 
 <div class="container">
-    <div class="row" style="overflow: hidden; padding:20px; ">
+    <div class="row" style="overflow: hidden; padding:0 20px 20px 20px; ">
 
         <div class="col-sm-14" style="text-align:center;">
                      <h3>Welcome back  {{ $stu->firstname }}   </h3>
@@ -45,7 +45,7 @@
 
     <div class="row" style="overflow: hidden; padding:20px 120px 20px 20px; ">
         <div class="col-md-14">
-        <h3 style="text-align:center;">Miles</h3>
+        <h3 style="text-align:center;">Latests Miles</h3>
         </div>
             {{--<div class="col-md-2 col-sm-2"> {{link_to('moremiles', '<', $attributes = array('class'=>'', 'style'=> 'font-size:50px'), $secure = null);}} </div>--}}
             <div class="col-sm-2">
@@ -56,7 +56,7 @@
             <div class="col-sm-2 mileagebox pull-right">
             <a href="" style="display:block; background:#fff; border color:#fff; text-align: center; padding: 20px 4px; ">
                <strong>Total Miles:</strong><br /> {{ $m->total_miles }}<br /><br />
-               <strong>Date: </strong><br /> {{ $m->date }}
+               <strong>Date: </strong><br /> {{ $m->created_at }}
 
                 <br /><br />
 {{--                <h2>{{ $m->count }}</h2>--}}
@@ -134,7 +134,7 @@
 {{--, 'class'=>'form-inline', 'style'=>'padding-top:40px;'--}}
                {{ Form::text('deed_name', null, ['placeholder' => 'ex. walked dog, feed cat.', 'class' => 'form-control', 'style' => 'width:60%; margin-bottom:10px;']) }}
                {{Form::hidden('score', '1')}}
-               {{Form::hidden('date', date("Y-m-d"))}}
+               {{Form::hidden('date', strtotime("now"))}}
                {{ Form::submit('Add a Good Deed', ['class' => 'btn btn-primary', 'style' => 'width:36%; margin-top:-9px;']); }}
         {{ Form::close() }}
 

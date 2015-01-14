@@ -6,7 +6,7 @@ body {
 	/* Margin bottom by footer height */
 	margin-bottom: 60px;
 	color:#2851A7;
-	background-image: url(../images/bg.png);
+	background-image: url(../images/bg.jpg);
 	background-repeat: repeat;
 }
 
@@ -277,4 +277,12 @@ button {
   padding: 20px 4px;
   margin: 0 4px;
 
+}
+
+.directorsbox{
+  background-color:#EEA224;
+  padding: 20px;
+  color:#222222;
+  -webkit-border-radius: 12px;
+  border-radius: 12px;
 }

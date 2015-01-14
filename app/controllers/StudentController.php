@@ -2,6 +2,7 @@
 
 //use iRun4Life\Forms\RegistrationForm;
 use iRun4Life\Forms\addMileageForm;
+use iRun4Life\Forms\addGoodDeedForm;
 use Laracasts\Flash\Flash;
 
 class StudentController extends \BaseController {
@@ -14,10 +15,12 @@ class StudentController extends \BaseController {
 	 */
 
 	private $addMileageForm;
+	private $addGoodDeedForm;
 
-	function __construct( addMileageForm $addMileageForm) //CommandBus $commandBus,
+	function __construct( addMileageForm $addMileageForm, addGoodDeedForm $addGoodDeedForm) //CommandBus $commandBus,
 	{
 		$this->addMileageForm = $addMileageForm;
+		$this->addGoodDeedForm = $addGoodDeedForm;
 
 		$this->beforeFilter('student');
 	}
@@ -57,15 +60,10 @@ class StudentController extends \BaseController {
 
 		$gooddeeds = DB::select('SELECT student.id, student.username, gooddeeds.deed_name, gooddeeds.score FROM student INNER JOIN gooddeed_student ON gooddeed_student.student_id = student.id INNER JOIN gooddeeds ON gooddeeds.id = gooddeed_student.gooddeed_id WHERE student.id = '.$id);
 
-//
-
 		return View::make('students.show', compact('stu', 'miles', 'gooddeeds'));
 	}
 
-	public function student(){
 
-
-	}
 
 
 //	public function
@@ -86,7 +84,26 @@ class StudentController extends \BaseController {
 		return View::make('students.viewgooddeeds', compact('stu', 'gooddeeds'));
 	}
 
-	public function addGoodDeed($id){
+	public function addGoodDeed(){
+
+		$this->addGoodDeedForm->validate(Input::all());
+
+		$gooddeed = Gooddeeds::create(
+
+			Input::only('deed_name', 'score', 'date')
+
+		);
+
+
+//		$this->registrationForm->validate(Input::all());
+//
+//		$parent = Parents::create(
+//			Input::only('firstname', 'lastname', 'email', 'password')
+//		);
+
+		Flash::overlay('Your Good Deed has been added.');
+
+		return Redirect::to('student/1')->with('flash_message', 'Your Good Deed has been added.');
 
 	}
 
@@ -116,7 +133,7 @@ class StudentController extends \BaseController {
 //			Input::only('firstname', 'lastname', 'email', 'password')
 //		);
 
-		Flash::overlay('You miles have been added');
+		Flash::overlay('Your miles have been added.');
 
 		return Redirect::to('student/1')->with('flash_message', 'Your miles have been added.');
 

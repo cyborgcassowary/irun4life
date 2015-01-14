@@ -29,7 +29,19 @@
     </div>
 
 
-    
+    <div class="row">
+
+        <div class="col-xs-12 col-xs-offset-1 directorsbox">
+
+            <h1>For all Bridge Valley Students using iRun4Life</h1>
+
+            <p class="lead">Please take a week off from school. You deserve it.</p>
+
+            <p> - Bridge Valley Director</p>
+
+        </div>
+
+    </div>
 
     <div class="row" style="overflow: hidden; padding:20px 120px 20px 20px; ">
         <div class="col-md-14">
@@ -38,7 +50,7 @@
             {{--<div class="col-md-2 col-sm-2"> {{link_to('moremiles', '<', $attributes = array('class'=>'', 'style'=> 'font-size:50px'), $secure = null);}} </div>--}}
             <div class="col-sm-2">
 
-                <a href="{{ URL::to("student/". $stu->id ."/miles/view") }}" class="arrow-link pull-right"><img src="/images/arrow.png" class="responsive-image" alt="View all Miles"/></a>
+                <a href="{{ URL::to("student/". $stu->id ."/miles/view") }}" class="arrow-link pull-right"><img src="/images/arrow_2.png" class="responsive-image" alt="View all Miles"/></a>
             </div>
              @foreach($rmiles as $m)
             <div class="col-sm-2 mileagebox pull-right">
@@ -84,29 +96,6 @@
     {{--</div>--}}
 
         </div>
-        <div class="row">
-            <div class="col-sm-8">
-            {{ Form::open() }}
-
-             {{Form::hidden('activity_name', 'Miles')}}
-             {{Form::hidden('date', date("Y-m-d"))}}
-                    <div class="form-group">
-                        {{ Form::label('total_miles', 'Total Miles:') }}
-                        {{ Form::text('total_miles', null, ['class' => 'form-control']) }}
-                    </div>
-
-                    <div class="form-group">
-                            {{ Form::label('parents_participation', 'Parents Participation:') }}
-                            {{Form::checkbox('parents_participation', '3') }}
-                    </div>
-
-                    <div class="form-group">
-                        {{ Form::submit('Add Miles', ['class' => 'btn btn-primary']) }}
-                    </div>
-
-             {{Form::close()}}
-            </div>
-        </div>
 
             {{--</div>--}}
 
@@ -114,10 +103,39 @@
         {{--<h3 style="text-align:center;">Add Deeds</h3>--}}
         <div class="col-sm-6">
 
-{{ Form::open(array('url' => url('foo/bar'), 'class'=>'form-inline', 'style'=>'padding-top:40px;' )) }}
-               {{ Form::text('Good Deed', null, ['placeholder' => 'ex. walked dog, feed cat.', 'class' => 'form-control', 'style' => 'width:60%;']) }}
+         {{ Form::open(array('action' => 'StudentController@addMiles', 'class'=>'form-inline', 'style'=>'padding-top:40px;' )) }}
 
-               {{ Form::submit('Add a Good Deed', ['class' => 'btn btn-default', 'style' => 'width:36%;']); }}
+                     {{Form::hidden('activity_name', 'Miles')}}
+                     {{Form::hidden('date', date("Y-m-d"))}}
+                            <div class="form-group">
+                                {{ Form::label('total_miles', 'Total Miles:') }}
+                                {{ Form::text('total_miles', null, ['class' => 'form-control']) }}
+
+                                {{ Form::submit('Add Miles', ['class' => 'btn btn-primary']) }}
+                            </div>
+
+                            <div class="form-group" style="">
+                                    {{ Form::label('parents_participation', 'Parents Participation:') }}
+                                    {{Form::checkbox('parents_participation', '3') }}
+                            </div>
+
+                            <div class="form-group">
+
+                            </div>
+
+                     {{Form::close()}}
+
+
+
+
+
+{{ Form::open(array('action' => 'StudentController@addGoodDeed', 'class'=>'form-inline', 'style'=>'padding-top:40px;' )) }}
+{{----}}
+{{--, 'class'=>'form-inline', 'style'=>'padding-top:40px;'--}}
+               {{ Form::text('deed_name', null, ['placeholder' => 'ex. walked dog, feed cat.', 'class' => 'form-control', 'style' => 'width:60%; margin-bottom:10px;']) }}
+               {{Form::hidden('score', '1')}}
+               {{Form::hidden('date', date("Y-m-d"))}}
+               {{ Form::submit('Add a Good Deed', ['class' => 'btn btn-primary', 'style' => 'width:36%; margin-top:-9px;']); }}
         {{ Form::close() }}
 
         </div>

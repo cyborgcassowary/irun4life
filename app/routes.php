@@ -76,6 +76,9 @@ Route::get('director', 'DirectorSessionsController@index');
 Route::get('/student/addmiles', 'StudentController@milesForm');
 Route::post('/student/addmiles', ['as' => 'addmiles', 'uses' => 'StudentController@addMiles']);
 
+//Route::get('/student/addmiles', 'StudentController@milesForm');
+Route::post('/student/addgooddeed', ['as' => 'addgooddeed', 'uses' => 'StudentController@addGoodDeed']);
+
 Route::get('studentdashlogin', 'StudentSessionsController@create');
 Route::get('studentdashlogout', 'StudentSessionsController@destroy');
 //

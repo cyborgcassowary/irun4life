@@ -63,7 +63,7 @@
 <br/><br/>
 
 
-               <strong>Total Miles:</strong><br /> {{ $m->total_miles }}<br /><br />
+               <strong>Miles:</strong><br /> {{ $m->total_miles }}<br /><br />
 
 
                 <br /><br />

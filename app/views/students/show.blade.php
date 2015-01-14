@@ -55,8 +55,16 @@
              @foreach($rmiles as $m)
             <div class="col-sm-2 mileagebox pull-right">
             <a href="" style="display:block; background:#fff; border color:#fff; text-align: center; padding: 20px 4px; ">
+            <strong>{{ date('l', strtotime($m->created_at)) }}</strong>
+<br>
+               <strong> {{ date('M d Y ', strtotime($m->created_at)) }} </strong>
+
+
+<br/><br/>
+
+
                <strong>Total Miles:</strong><br /> {{ $m->total_miles }}<br /><br />
-               <strong>Date: </strong><br /> {{ $m->created_at }}
+
 
                 <br /><br />
 {{--                <h2>{{ $m->count }}</h2>--}}
